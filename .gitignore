@@ -1,0 +1,20 @@
+# Node + Python ignore
+node_modules/
+.env
+__pycache__/
+.vscode/
+.venv/
+.DS_Store
+dist/
+build/
+*.pyc
+
+# Frontend build outputs
+frontend/node_modules/
+frontend/dist/
+
+# Python cache
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
