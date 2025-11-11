@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
 
-// ✅ Format HTML with indentation for readability
+//  Format HTML with indentation for readability
 function prettyHtml(html) {
   if (!html) return ''
   const cleaned = html
@@ -28,7 +28,7 @@ function prettyHtml(html) {
   return formatted.join('\n')
 }
 
-// ✅ Each search result card
+// Each search result card
 function ResultCard({ item, idx }) {
   const [open, setOpen] = useState(false)
   const formattedHtml = prettyHtml(item.chunk_html || '')
@@ -60,7 +60,7 @@ function ResultCard({ item, idx }) {
   )
 }
 
-// ✅ Main app
+//  Main app
 export default function App() {
   const [url, setUrl] = useState('https://smarter.codes')
   const [query, setQuery] = useState('AI')
@@ -81,7 +81,7 @@ export default function App() {
       })
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
-      // ✅ Sort & keep only top 10 results
+      //  Sort & keep only top 10 results
       const topResults = (data.results || []).sort((a, b) => b.raw_score - a.raw_score).slice(0, 10)
       setResults(topResults)
     } catch (err) {
